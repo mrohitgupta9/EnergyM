@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EnergyM | Programs</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body { font-family: 'Poppins', sans-serif; background:#05080f; color:#fff; }
+
+/* reveal animation */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:.9s ease;
+}
+.reveal.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* program card */
+.program-card{
+  transition:.4s ease;
+}
+.program-card:hover{
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 30px 60px rgba(34,211,238,.18);
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div id="navbar-container"></div>
+
+<!-- HERO -->
+<section class="pt-36 pb-16 text-center reveal">
+  <h1 class="text-4xl md:text-6xl font-bold">
+    Training <span class="text-cyan-400">Programs</span>
+  </h1>
+  <p class="text-gray-400 mt-6 max-w-2xl mx-auto">
+    Scientifically designed programs to help you build strength, burn fat, and improve endurance.
+  </p>
+</section>
+
+<!-- PROGRAMS GRID -->
+<section class="max-w-7xl mx-auto px-6 pb-24">
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+    <!-- CARD -->
+    <div class="program-card reveal bg-[#0b1220] p-6 rounded-2xl border border-white/10 text-center">
+      <div class="text-cyan-400 text-5xl mb-4">🏋️</div>
+      <h3 class="text-xl font-semibold mb-2">Strength Training</h3>
+      <p class="text-gray-400 text-sm mb-4">
+        Build muscle & power with expert guidance.
+      </p>
+      <a href="strength.html"
+        class="block w-full bg-cyan-400 text-black py-2 rounded-full font-semibold text-center hover:scale-105 transition">
+        Learn More
+      </a>
+    </div>
+
+    <div class="program-card reveal bg-[#0b1220] p-6 rounded-2xl border border-white/10 text-center">
+      <div class="text-cyan-400 text-5xl mb-4">🔥</div>
+      <h3 class="text-xl font-semibold mb-2">Fat Loss</h3>
+      <p class="text-gray-400 text-sm mb-4">
+        HIIT & cardio focused fat burning plans.
+      </p>
+      <a href="fat-loss.html"
+   class="block w-full bg-cyan-400 text-black py-2 rounded-full font-semibold text-center hover:scale-105 transition">
+  Learn More
+</a>
+    </div>
+
+    <div class="program-card reveal bg-[#0b1220] p-6 rounded-2xl border border-white/10 text-center">
+      <div class="text-cyan-400 text-5xl mb-4">⚡</div>
+      <h3 class="text-xl font-semibold mb-2">CrossFit</h3>
+      <p class="text-gray-400 text-sm mb-4">
+        High intensity functional training.
+      </p>
+      <a href="crossfit.html"
+   class="block w-full bg-cyan-400 text-black py-2 rounded-full font-semibold text-center hover:scale-105 transition">
+  Learn More
+</a>
+    </div>
+
+    <div class="program-card reveal bg-[#0b1220] p-6 rounded-2xl border border-white/10 text-center">
+      <div class="text-cyan-400 text-5xl mb-4">🧘</div>
+      <h3 class="text-xl font-semibold mb-2">Yoga & Mobility</h3>
+      <p class="text-gray-400 text-sm mb-4">
+        Flexibility, balance & recovery.
+      </p>
+      <a href="yoga.html"
+   class="block w-full bg-cyan-400 text-black py-2 rounded-full font-semibold text-center hover:scale-105 transition">
+  Learn More
+</a>
+    </div>
+
+    <div class="program-card reveal bg-[#0b1220] p-6 rounded-2xl border border-white/10 text-center">
+      <div class="text-cyan-400 text-5xl mb-4">🏃</div>
+      <h3 class="text-xl font-semibold mb-2">Cardio Blast</h3>
+      <p class="text-gray-400 text-sm mb-4">
+        Endurance & stamina boost.
+      </p>
+      <a href="cardio.html"
+   class="block w-full bg-cyan-400 text-black py-2 rounded-full font-semibold text-center hover:scale-105 transition">
+  Learn More
+</a>
+    </div>
+
+    <div class="program-card reveal bg-[#0b1220] p-6 rounded-2xl border border-white/10 text-center">
+      <div class="text-cyan-400 text-5xl mb-4">🥗</div>
+      <h3 class="text-xl font-semibold mb-2">Nutrition Guidance</h3>
+      <p class="text-gray-400 text-sm mb-4">
+        Diet plans tailored for results.
+      </p>
+      <a href="nutrition.html"
+   class="block w-full bg-cyan-400 text-black py-2 rounded-full font-semibold text-center hover:scale-105 transition">
+  Learn More
+</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="py-20 bg-[#03060c] reveal">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-cyan-400 mb-12">
+      Why Choose EnergyM
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-8 text-center">
+      <div class="bg-[#0b1220] p-8 rounded-2xl border border-white/10 hover:scale-105 transition">
+        <div class="text-cyan-400 text-4xl mb-4">🏅</div>
+        <h3 class="text-xl font-semibold mb-2">Certified Trainers</h3>
+        <p class="text-gray-400 text-sm">Expert & professional guidance.</p>
+      </div>
+
+      <div class="bg-[#0b1220] p-8 rounded-2xl border border-white/10 hover:scale-105 transition">
+        <div class="text-cyan-400 text-4xl mb-4">💪</div>
+        <h3 class="text-xl font-semibold mb-2">Modern Equipment</h3>
+        <p class="text-gray-400 text-sm">Latest fitness technology.</p>
+      </div>
+
+      <div class="bg-[#0b1220] p-8 rounded-2xl border border-white/10 hover:scale-105 transition">
+        <div class="text-cyan-400 text-4xl mb-4">📋</div>
+        <h3 class="text-xl font-semibold mb-2">Personalized Plans</h3>
+        <p class="text-gray-400 text-sm">Workout + nutrition plans.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="pb-24 text-center reveal">
+  <h2 class="text-4xl font-bold mb-6">
+    Not sure which <span class="text-cyan-400">program</span> is right for you?
+  </h2>
+  <p class="text-gray-400 mb-8">
+    Talk to our expert trainers and get a personalized plan.
+  </p>
+  <a href="contact.html"
+     class="inline-block bg-cyan-400 text-black px-10 py-4 rounded-full font-semibold hover:scale-110 transition">
+    Get Free Consultation
+  </a>
+</section>
+
+<!-- FOOTER -->
+<div id="footer-container"></div>
+
+<!-- JS -->
+<script src="main.js"></script>
+
+<script>
+  /* Load Navbar */
+  fetch('navbar.html')
+    .then(r => r.text())
+    .then(d => {
+      document.getElementById('navbar-container').innerHTML = d;
+    });
+
+  /* Load Footer */
+  fetch('footer.html')
+    .then(r => r.text())
+    .then(d => {
+      document.getElementById('footer-container').innerHTML = d;
+    });
+
+  /* Scroll reveal */
+  const reveals = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  }, { threshold: 0.15 });
+
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

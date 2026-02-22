@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EnergyM | Schedule</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body{font-family:'Poppins',sans-serif}
+
+/* reveal animation */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:.9s ease;
+}
+.reveal.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* program card */
+.program-card{
+  transition:.4s ease;
+}
+.program-card:hover{
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 30px 60px rgba(34,211,238,.18);
+}
+</style>
+</head>
+
+<body class="bg-[#05080f] text-white">
+
+<!-- NAVBAR -->
+<div id="navbar-container"></div>
+
+
+<!-- HERO -->
+<section class="pt-36 pb-12 text-center reveal">
+  <h1 class="text-4xl md:text-5xl font-bold">
+    Gym <span class="text-cyan-400">Schedule</span>
+  </h1>
+  <p class="text-gray-400 mt-4 max-w-2xl mx-auto reveal">
+    Check our weekly workout schedule and join sessions that suit your goals.
+  </p>
+</section>
+
+<!-- SCHEDULE CARDS -->
+<section class="max-w-7xl mx-auto px-6 py-16 reveal">
+  <h2 class="text-3xl md:text-4xl font-bold text-cyan-400 text-center mb-12">Weekly Schedule</h2>
+
+  <div class="grid md:grid-cols-3 gap-8">
+
+    <!-- CARD 1 -->
+    <div class="schedule-card bg-[#0b1220] p-6 rounded-2xl border border-white/10 reveal">
+      <h3 class="text-xl font-semibold mb-4">Monday</h3>
+      <ul class="space-y-3 text-gray-400 text-sm">
+        <li>06:00 AM - 07:00 AM <span class="text-cyan-400">Yoga</span></li>
+        <li>07:30 AM - 09:00 AM <span class="text-cyan-400">Strength Training</span></li>
+        <li>05:00 PM - 06:00 PM <span class="text-cyan-400">HIIT</span></li>
+        <li>06:30 PM - 08:00 PM <span class="text-cyan-400">CrossFit</span></li>
+      </ul>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="schedule-card bg-[#0b1220] p-6 rounded-2xl border border-white/10 reveal">
+      <h3 class="text-xl font-semibold mb-4">Tuesday</h3>
+      <ul class="space-y-3 text-gray-400 text-sm">
+        <li>06:00 AM - 07:00 AM <span class="text-cyan-400">Cardio</span></li>
+        <li>07:30 AM - 09:00 AM <span class="text-cyan-400">Weight Training</span></li>
+        <li>05:00 PM - 06:00 PM <span class="text-cyan-400">Zumba</span></li>
+        <li>06:30 PM - 08:00 PM <span class="text-cyan-400">Strength Focus</span></li>
+      </ul>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="schedule-card bg-[#0b1220] p-6 rounded-2xl border border-white/10 reveal">
+      <h3 class="text-xl font-semibold mb-4">Wednesday</h3>
+      <ul class="space-y-3 text-gray-400 text-sm">
+        <li>06:00 AM - 07:00 AM <span class="text-cyan-400">Yoga</span></li>
+        <li>07:30 AM - 09:00 AM <span class="text-cyan-400">HIIT</span></li>
+        <li>05:00 PM - 06:00 PM <span class="text-cyan-400">CrossFit</span></li>
+        <li>06:30 PM - 08:00 PM <span class="text-cyan-400">Weight Training</span></li>
+      </ul>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="schedule-card bg-[#0b1220] p-6 rounded-2xl border border-white/10 reveal">
+      <h3 class="text-xl font-semibold mb-4">Thursday</h3>
+      <ul class="space-y-3 text-gray-400 text-sm">
+        <li>06:00 AM - 07:00 AM <span class="text-cyan-400">Cardio</span></li>
+        <li>07:30 AM - 09:00 AM <span class="text-cyan-400">Strength Training</span></li>
+        <li>05:00 PM - 06:00 PM <span class="text-cyan-400">HIIT</span></li>
+        <li>06:30 PM - 08:00 PM <span class="text-cyan-400">CrossFit</span></li>
+      </ul>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="schedule-card bg-[#0b1220] p-6 rounded-2xl border border-white/10 reveal">
+      <h3 class="text-xl font-semibold mb-4">Friday</h3>
+      <ul class="space-y-3 text-gray-400 text-sm">
+        <li>06:00 AM - 07:00 AM <span class="text-cyan-400">Yoga</span></li>
+        <li>07:30 AM - 09:00 AM <span class="text-cyan-400">Weight Training</span></li>
+        <li>05:00 PM - 06:00 PM <span class="text-cyan-400">Zumba</span></li>
+        <li>06:30 PM - 08:00 PM <span class="text-cyan-400">HIIT</span></li>
+      </ul>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="schedule-card bg-[#0b1220] p-6 rounded-2xl border border-white/10 reveal">
+      <h3 class="text-xl font-semibold mb-4">Saturday</h3>
+      <ul class="space-y-3 text-gray-400 text-sm">
+        <li>07:00 AM - 08:00 AM <span class="text-cyan-400">CrossFit</span></li>
+        <li>08:30 AM - 10:00 AM <span class="text-cyan-400">Strength Focus</span></li>
+        <li>04:00 PM - 05:00 PM <span class="text-cyan-400">Cardio</span></li>
+        <li>05:30 PM - 07:00 PM <span class="text-cyan-400">HIIT</span></li>
+      </ul>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="schedule-card bg-[#0b1220] p-6 rounded-2xl border border-white/10 reveal">
+      <h3 class="text-xl font-semibold mb-4">Sunday</h3>
+      <ul class="space-y-3 text-gray-400 text-sm">
+        <li>08:00 AM - 09:00 AM <span class="text-cyan-400">Yoga</span></li>
+        <li>09:30 AM - 11:00 AM <span class="text-cyan-400">HIIT</span></li>
+        <li>04:00 PM - 05:00 PM <span class="text-cyan-400">Strength Training</span></li>
+        <li>05:30 PM - 06:30 PM <span class="text-cyan-400">CrossFit</span></li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="pb-24 text-center reveal">
+  <h2 class="text-4xl font-bold mb-6">
+    Want to join a session? <span class="text-cyan-400">Book Now!</span>
+  </h2>
+  <p class="text-gray-400 mb-8">
+    Select your preferred sessions and get started today.
+  </p>
+  <a href="contact.html"
+     class="inline-block bg-cyan-400 text-black px-10 py-4 rounded-full font-semibold hover:scale-110 transition">
+    Book a Session
+  </a>
+</section>
+
+<!-- FOOTER -->
+<div id="footer-container"></div>
+
+<!-- JS -->
+<script src="main.js"></script>
+
+<!-- JS -->
+<script>
+// Load Navbar
+fetch('navbar.html')
+  .then(response => response.text())
+  .then(data => document.getElementById('navbar-container').innerHTML = data);
+
+// Load Footer
+fetch('footer.html')
+  .then(response => response.text())
+  .then(data => document.getElementById('footer-container').innerHTML = data);
+
+// Scroll reveal
+const reveals=document.querySelectorAll(".reveal");
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting) entry.target.classList.add("show");
+  });
+},{threshold:.15});
+reveals.forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EnergyM | Login</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    body { font-family: "Poppins", sans-serif; }
+  </style>
+</head>
+
+<body class="bg-[#05080f] text-white flex items-center justify-center min-h-screen relative">
+
+  <!-- CLOSE -->
+  <a href="../index.html"
+   class="absolute top-6 right-6 text-gray-400 hover:text-cyan-400 text-3xl transition">
+  &times;
+</a>
+
+  <!-- LOGIN CARD -->
+  <div class="bg-[#0b1220] p-6 rounded-2xl w-full max-w-sm border border-white/10">
+
+    <h2 class="text-2xl font-bold text-center text-cyan-400 mb-1">
+      EnergyM
+    </h2>
+    <p class="text-center text-gray-400 mb-5 text-xs">
+      Sign in to continue
+    </p>
+
+    <!-- ROLE SELECT -->
+    <div class="flex bg-[#05080f] rounded-full p-1 mb-5">
+      <button id="adminBtn"
+        class="flex-1 py-2 rounded-full text-xs bg-cyan-400 text-black font-semibold">
+        Admin
+      </button>
+      <button id="trainerBtn"
+        class="flex-1 py-2 rounded-full text-xs text-gray-400">
+        Trainer
+      </button>
+    </div>
+
+    <!-- FORM -->
+    <form id="loginForm" class="space-y-3" autocomplete="off">
+
+      <input
+        id="email"
+        name="fake-email"
+        type="email"
+        placeholder="Email address"
+        autocomplete="off"
+        required
+        class="w-full bg-[#05080f] border border-white/10 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-cyan-400">
+
+      <div class="relative">
+        <input
+          id="password"
+          name="fake-password"
+          type="password"
+          placeholder="Password"
+          autocomplete="new-password"
+          required
+          class="w-full bg-[#05080f] border border-white/10 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-cyan-400">
+        <button type="button" id="togglePwd"
+          class="absolute right-4 top-2.5 text-gray-400 text-sm">
+          👁
+        </button>
+      </div>
+
+      <!-- ERROR -->
+      <p id="error" class="text-red-400 text-xs hidden">
+        Invalid credentials
+      </p>
+
+      <button id="loginBtn"
+        class="w-full bg-cyan-400 text-black py-2.5 rounded-full text-sm font-semibold hover:scale-105 transition">
+        Login
+      </button>
+    </form>
+
+    <!-- DEMO -->
+    <p class="text-center text-gray-400 text-xs mt-5 leading-relaxed">
+      Demo<br>
+      <span class="text-cyan-400">Admin:</span> admin@energym.com / 123456<br>
+      <span class="text-cyan-400">Trainer:</span> trainer@energym.com / 123456
+    </p>
+  </div>
+
+<script>
+  let role = "admin";
+
+  const adminBtn    = document.getElementById("adminBtn");
+  const trainerBtn  = document.getElementById("trainerBtn");
+  const loginForm   = document.getElementById("loginForm");
+  const emailEl     = document.getElementById("email");
+  const passwordEl  = document.getElementById("password");
+  const errorEl     = document.getElementById("error");
+  const loginBtn    = document.getElementById("loginBtn");
+
+  adminBtn.onclick = () => setRole("admin");
+  trainerBtn.onclick = () => setRole("trainer");
+
+  function setRole(r){
+    role = r;
+    adminBtn.className   = r==="admin"
+      ? "flex-1 py-2 rounded-full text-xs bg-cyan-400 text-black font-semibold"
+      : "flex-1 py-2 rounded-full text-xs text-gray-400";
+    trainerBtn.className = r==="trainer"
+      ? "flex-1 py-2 rounded-full text-xs bg-cyan-400 text-black font-semibold"
+      : "flex-1 py-2 rounded-full text-xs text-gray-400";
+  }
+
+  document.getElementById("togglePwd").onclick = ()=>{
+    passwordEl.type = passwordEl.type === "password" ? "text" : "password";
+  };
+
+  loginForm.addEventListener("submit", e=>{
+    e.preventDefault();
+    errorEl.classList.add("hidden");
+
+    loginBtn.innerText = "Logging in...";
+    loginBtn.disabled = true;
+
+    setTimeout(()=>{
+      const email = emailEl.value.trim();
+      const pass  = passwordEl.value.trim();
+
+      if(
+        (role==="admin"   && email==="admin@energym.com"   && pass==="123456") ||
+        (role==="trainer" && email==="trainer@energym.com" && pass==="123456")
+      ){
+        localStorage.setItem("isLoggedIn","true");
+        localStorage.setItem("role", role);
+        window.location.href = "dashboard.html";
+      } else {
+        errorEl.classList.remove("hidden");
+        loginBtn.innerText = "Login";
+        loginBtn.disabled = false;
+      }
+    },600);
+  });
+</script>
+
+</body>
+</html>

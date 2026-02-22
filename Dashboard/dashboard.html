@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EnergyM | Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background: #05080f; color: white; }
+    /* Active sidebar button */
+    .menu-btn.active {
+      @apply bg-cyan-400 text-black font-semibold;
+    }
+    /* Inputs styling */
+    input, select {
+      @apply bg-[#0b1220] text-white border border-white/20 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400;
+    }
+    /* Table styling */
+    table { @apply w-full border-collapse text-sm; }
+    th, td { @apply border border-white/10 py-2 px-3; }
+    th { @apply text-gray-400 text-left; }
+    /* Scrollbar for sidebar */
+    aside::-webkit-scrollbar { width: 6px; }
+    aside::-webkit-scrollbar-thumb { background-color: #22d3ee; border-radius: 3px; }
+  </style>
+</head>
+<body class="flex min-h-screen font-sans">
+
+  <!-- SIDEBAR -->
+  <aside class="w-64 bg-[#0b1220] border-r border-white/10 flex flex-col overflow-y-auto">
+    <div class="px-6 py-6 border-b border-white/10 flex flex-col items-start">
+      <h1 class="text-2xl font-bold text-cyan-400">EnergyM</h1>
+      <p class="text-xs text-gray-400 mt-1">Gym Management</p>
+    </div>
+
+    <div class="px-6 py-4 border-b border-white/10 flex items-center gap-3">
+      <div id="profileAvatar" class="w-10 h-10 rounded-full bg-cyan-400 text-black flex items-center justify-center font-bold">A</div>
+      <div>
+        <p id="profileName" class="text-sm font-semibold">Admin</p>
+        <p id="profileEmail" class="text-xs text-gray-400">admin@energym.com</p>
+      </div>
+    </div>
+
+    <nav class="flex-1 px-4 py-6 space-y-2">
+      <button class="menu-btn w-full flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-cyan-500 transition" data-page="dashboard">📊 Dashboard</button>
+      <button class="menu-btn w-full flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-cyan-500 transition" data-page="members">👥 Members</button>
+      <button class="menu-btn w-full flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-cyan-500 transition" data-page="trainers">🏋️ Trainers</button>
+      <button class="menu-btn w-full flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-cyan-500 transition" data-page="payments">💰 Payments</button>
+      <button class="menu-btn w-full flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-cyan-500 transition" data-page="settings">⚙ Settings</button>
+    </nav>
+
+    <div class="p-4 border-t border-white/10">
+      <button id="logoutBtn" class="w-full bg-red-500 py-2 rounded-lg hover:bg-red-600 transition">Logout</button>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-1 p-8 overflow-y-auto">
+    <div id="content"></div>
+  </main>
+
+  <script>
+    /* ===== AUTH & PROFILE ===== */
+    if (localStorage.getItem("isLoggedIn") !== "true") window.location.href="login.html";
+    const role = localStorage.getItem("role") || "admin";
+    const profileNameEl = document.getElementById("profileName");
+    const profileEmailEl = document.getElementById("profileEmail");
+    const profileAvatarEl = document.getElementById("profileAvatar");
+    if(role==="admin"){ profileNameEl.innerText="Admin"; profileEmailEl.innerText="admin@energym.com"; profileAvatarEl.innerText="A"; }
+    else{ profileNameEl.innerText="Trainer"; profileEmailEl.innerText="trainer@energym.com"; profileAvatarEl.innerText="T"; }
+
+    /* ===== DATA ===== */
+    let members = JSON.parse(localStorage.getItem("members")) || [];
+    let trainers = JSON.parse(localStorage.getItem("trainers")) || [];
+    let payments = JSON.parse(localStorage.getItem("payments")) || [];
+
+    const content = document.getElementById("content");
+
+    /* ===== HELPERS ===== */
+    const statCard = (title,value)=>`<div class="bg-[#0b1220] p-6 rounded-xl border border-white/10"><p class="text-gray-400">${title}</p><p class="text-3xl font-bold text-cyan-400 mt-2">${value}</p></div>`;
+    const emptyState = text=>`<p class="text-gray-400">${text}</p>`;
+
+    /* ===== CRUD ===== */
+    function addMember(){const val=document.getElementById("memberName").value.trim();if(!val)return;members.push(val);localStorage.setItem("members",JSON.stringify(members));loadPage("members");}
+    function editMember(i){const newName=prompt("Edit member name",members[i]);if(!newName)return;members[i]=newName;localStorage.setItem("members",JSON.stringify(members));loadPage("members");}
+    function deleteMember(i){members.splice(i,1);localStorage.setItem("members",JSON.stringify(members));loadPage("members");}
+
+    function addTrainer(){const val=document.getElementById("trainerName").value.trim();if(!val)return;trainers.push(val);localStorage.setItem("trainers",JSON.stringify(trainers));loadPage("trainers");}
+    function editTrainer(i){const newName=prompt("Edit trainer name",trainers[i]);if(!newName)return;trainers[i]=newName;localStorage.setItem("trainers",JSON.stringify(trainers));loadPage("trainers");}
+    function deleteTrainer(i){trainers.splice(i,1);localStorage.setItem("trainers",JSON.stringify(trainers));loadPage("trainers");}
+
+    function addPayment(){const n=document.getElementById("payName").value.trim();const a=+document.getElementById("payAmt").value;if(!n||!a)return;payments.push({name:n,amount:a});localStorage.setItem("payments",JSON.stringify(payments));loadPage("payments");}
+    function editPayment(i){const newName=prompt("Edit member name",payments[i].name);const newAmt=+prompt("Edit amount",payments[i].amount);if(!newName||!newAmt)return;payments[i]={name:newName,amount:newAmt};localStorage.setItem("payments",JSON.stringify(payments));loadPage("payments");}
+    function deletePayment(i){payments.splice(i,1);localStorage.setItem("payments",JSON.stringify(payments));loadPage("payments");}
+
+    function logout(){localStorage.clear();window.location.href="login.html";}
+
+    /* ===== LOAD PAGE ===== */
+    function loadPage(page){
+      const totalRevenue=payments.reduce((s,p)=>s+p.amount,0);
+
+      
+      if(page==="dashboard"){
+  content.innerHTML=`
+    <p class="text-yellow-400 mb-2">⚠️ This dashboard is currently a work in progress.</p>
+    <h2 class="text-3xl font-bold mb-4">Dashboard</h2>
+    <div class="grid md:grid-cols-4 gap-6 mb-8">
+      ${statCard("Members",members.length)}
+      ${statCard("Trainers",trainers.length)}
+      ${statCard("Payments",payments.length)}
+      ${statCard("Revenue","₹"+totalRevenue)}
+    </div>
+    <div class="bg-[#0b1220] p-6 rounded-xl border border-white/10">
+      <h3 class="text-lg font-semibold mb-4">Recent Payments</h3>
+      ${payments.length===0?emptyState("No payments yet"):`
+        <div class="overflow-x-auto">
+          <table>
+            <thead><tr><th>Member</th><th>Amount</th></tr></thead>
+            <tbody>
+              ${payments.slice(-5).reverse().map(p=>`<tr><td>${p.name}</td><td class="text-cyan-400">₹${p.amount}</td></tr>`).join("")}
+            </tbody>
+          </table>
+        </div>`}
+    </div>
+  `;
+}
+
+      if(page==="members"){
+        content.innerHTML=`
+          <h2 class="text-3xl font-bold mb-4">Members</h2>
+          <div class="flex gap-2 mb-4"><input id="memberName" placeholder="Member name" class="flex-1"/><button onclick="addMember()" class="bg-cyan-400 text-black px-4 rounded hover:bg-cyan-500 transition">Add</button></div>
+          <div class="overflow-x-auto">
+            <table>
+              <thead><tr><th>Name</th><th>Actions</th></tr></thead>
+              <tbody>${members.map((m,i)=>`<tr><td>${m}</td><td class="flex gap-2"><button onclick="editMember(${i})" class="bg-yellow-500 px-2 rounded hover:bg-yellow-600">Edit</button><button onclick="deleteMember(${i})" class="bg-red-500 px-2 rounded hover:bg-red-600">Delete</button></td></tr>`).join("")}</tbody>
+            </table>
+          </div>
+        `;
+      }
+
+      if(page==="trainers"){
+        content.innerHTML=`
+          <h2 class="text-3xl font-bold mb-4">Trainers</h2>
+          <div class="flex gap-2 mb-4"><input id="trainerName" placeholder="Trainer name" class="flex-1"/><button onclick="addTrainer()" class="bg-cyan-400 text-black px-4 rounded hover:bg-cyan-500 transition">Add</button></div>
+          <div class="overflow-x-auto">
+            <table>
+              <thead><tr><th>Name</th><th>Actions</th></tr></thead>
+              <tbody>${trainers.map((t,i)=>`<tr><td>${t}</td><td class="flex gap-2"><button onclick="editTrainer(${i})" class="bg-yellow-500 px-2 rounded hover:bg-yellow-600">Edit</button><button onclick="deleteTrainer(${i})" class="bg-red-500 px-2 rounded hover:bg-red-600">Delete</button></td></tr>`).join("")}</tbody>
+            </table>
+          </div>
+        `;
+      }
+
+      if(page==="payments"){
+        content.innerHTML=`
+          <h2 class="text-3xl font-bold mb-4">Payments</h2>
+          <div class="flex gap-2 mb-4 flex-wrap"><input id="payName" placeholder="Member" class="flex-1"/><input id="payAmt" type="number" placeholder="Amount" class="w-32"/><button onclick="addPayment()" class="bg-cyan-400 text-black px-4 rounded hover:bg-cyan-500 transition">Add</button></div>
+          <div class="overflow-x-auto">
+            <table>
+              <thead><tr><th>Member</th><th>Amount</th><th>Actions</th></tr></thead>
+              <tbody>${payments.map((p,i)=>`<tr><td>${p.name}</td><td class="text-cyan-400">₹${p.amount}</td><td class="flex gap-2"><button onclick="editPayment(${i})" class="bg-yellow-500 px-2 rounded hover:bg-yellow-600">Edit</button><button onclick="deletePayment(${i})" class="bg-red-500 px-2 rounded hover:bg-red-600">Delete</button></td></tr>`).join("")}</tbody>
+            </table>
+          </div>
+        `;
+      }
+
+      if(page==="settings"){
+        content.innerHTML=`
+          <h2 class="text-3xl font-bold mb-4">Settings</h2>
+          <div class="bg-[#0b1220] p-6 rounded-xl border border-white/10 space-y-4">
+            <p class="text-gray-400">System preferences & maintenance.</p>
+            <button onclick="localStorage.clear();location.reload()" class="bg-red-500 px-4 py-2 rounded hover:bg-red-600 transition">Reset Application</button>
+          </div>
+        `;
+      }
+    }
+
+    /* ===== SIDEBAR CLICK HANDLER ===== */
+    const menuButtons=document.querySelectorAll(".menu-btn");
+    menuButtons.forEach(btn=>{btn.addEventListener("click",()=>{
+      menuButtons.forEach(b=>b.classList.remove("active"));
+      btn.classList.add("active");
+      loadPage(btn.dataset.page);
+    });});
+    document.getElementById("logoutBtn").addEventListener("click",logout);
+
+    /* ===== INITIAL LOAD ===== */
+    loadPage("dashboard");
+    menuButtons[0].classList.add("active"); // Dashboard active by default
+  </script>
+
+</body>
+</html>

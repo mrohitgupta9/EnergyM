@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EnergyM | Gallery</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+  font-family:'Poppins',sans-serif;
+  background:#05080f;
+  color:#fff;
+}
+
+/* Masonry */
+.masonry{column-count:4;column-gap:1.5rem}
+@media(max-width:1024px){.masonry{column-count:3}}
+@media(max-width:768px){.masonry{column-count:2}}
+@media(max-width:480px){.masonry{column-count:1}}
+
+.masonry-item{
+  break-inside:avoid;
+  margin-bottom:1.5rem;
+  border-radius:1rem;
+  overflow:hidden;
+  position:relative;
+  cursor:pointer;
+  transition:.4s ease;
+}
+.masonry-item:hover{
+  transform:translateY(-8px);
+  box-shadow:0 25px 50px rgba(34,211,238,.25);
+}
+
+.gallery-img{width:100%;display:block;transition:.6s}
+.masonry-item:hover img{transform:scale(1.08)}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.7),transparent);
+  display:flex;
+  align-items:flex-end;
+  padding:1rem;
+  opacity:0;
+  transition:.4s;
+}
+.masonry-item:hover .overlay{opacity:1}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(40px);transition:.8s}
+.reveal.show{opacity:1;transform:none}
+
+/* Lightbox */
+#lightbox{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,.9);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+}
+#lightbox img{
+  max-width:90%;
+  max-height:85%;
+  border-radius:1rem;
+}
+#closeLightbox{
+  position:absolute;top:20px;right:30px;
+  font-size:2.5rem;cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div id="navbar-container"></div>
+
+<!-- HEADER -->
+<section class="pt-32 pb-14 text-center reveal">
+  <h1 class="text-4xl md:text-5xl font-bold">
+    Gym <span class="text-cyan-400">Gallery</span>
+  </h1>
+  <p class="text-gray-400 mt-4 max-w-xl mx-auto">
+    Real training moments & transformations at EnergyM
+  </p>
+</section>
+
+<!-- GALLERY -->
+<section class="max-w-7xl mx-auto px-6 pb-24 reveal">
+  <div class="masonry">
+
+    <!-- CARD -->
+    <div class="masonry-item">
+      <img class="gallery-img" src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=800&q=80">
+      <div class="overlay"><p>Strength Zone</p></div>
+    </div>
+
+    <div class="masonry-item">
+      <img class="gallery-img" src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=80">
+      <div class="overlay"><p>Personal Training</p></div>
+    </div>
+
+    <div class="masonry-item">
+      <img class="gallery-img" src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&fit=crop&w=800&q=80">
+      <div class="overlay"><p>Heavy Lifting</p></div>
+    </div>
+
+    <div class="masonry-item">
+      <img class="gallery-img" src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=800&q=80">
+      <div class="overlay"><p>CrossFit Arena</p></div>
+    </div>
+
+    <div class="masonry-item">
+      <img class="gallery-img" src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=800&q=80">
+      <div class="overlay"><p>Transformation</p></div>
+    </div>
+
+    <div class="masonry-item">
+      <img class="gallery-img" src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=800&q=80">
+      <div class="overlay"><p>Cardio Floor</p></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <span id="closeLightbox">&times;</span>
+  <img id="lightboxImg">
+</div>
+
+<!-- FOOTER -->
+<div id="footer-container"></div>
+
+<script>
+/* Navbar & Footer load */
+fetch("navbar.html").then(r=>r.text()).then(d=>{
+  document.getElementById("navbar-container").innerHTML=d;
+});
+fetch("footer.html").then(r=>r.text()).then(d=>{
+  document.getElementById("footer-container").innerHTML=d;
+});
+
+/* Reveal */
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")});
+},{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+/* Lightbox */
+const lb=document.getElementById("lightbox");
+const lbImg=document.getElementById("lightboxImg");
+document.querySelectorAll(".gallery-img").forEach(img=>{
+  img.onclick=()=>{
+    lb.style.display="flex";
+    lbImg.src=img.src;
+  };
+});
+document.getElementById("closeLightbox").onclick=()=>lb.style.display="none";
+lb.onclick=e=>{if(e.target===lb)lb.style.display="none";}
+</script>
+
+</body>
+</html>
