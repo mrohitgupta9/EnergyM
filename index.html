@@ -304,8 +304,10 @@
           class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-6 sm:mb-10">
           Class <span class="text-cyan-400">Schedule</span>
         </h2>
+
+        <!-- FULL TABLE: Desktop -->
         <div
-          class="overflow-x-auto bg-[#0b1220] rounded-2xl border border-white/10">
+          class="hidden md:block overflow-x-auto bg-[#0b1220] rounded-2xl border border-white/10">
           <table class="w-full text-left border-collapse text-sm sm:text-base">
             <thead class="bg-[#0f172a]">
               <tr>
@@ -324,16 +326,79 @@
               </tr>
             </thead>
             <tbody>
-              <!-- Rows -->
               <tr class="border-t border-white/10 hover:bg-white/5 transition">
                 <td class="px-4 sm:px-6 py-3">Monday</td>
                 <td class="px-4 sm:px-6 py-3">6:00 AM – 7:00 AM</td>
                 <td class="px-4 sm:px-6 py-3">Strength Training</td>
                 <td class="px-4 sm:px-6 py-3">Rahul Verma</td>
               </tr>
-              <!-- Repeat other rows -->
+              <tr class="border-t border-white/10 hover:bg-white/5 transition">
+                <td class="px-4 sm:px-6 py-3">Tuesday</td>
+                <td class="px-4 sm:px-6 py-3">7:30 AM – 8:30 AM</td>
+                <td class="px-4 sm:px-6 py-3">Cardio Blast</td>
+                <td class="px-4 sm:px-6 py-3">Neha Singh</td>
+              </tr>
+              <tr class="border-t border-white/10 hover:bg-white/5 transition">
+                <td class="px-4 sm:px-6 py-3">Wednesday</td>
+                <td class="px-4 sm:px-6 py-3">6:00 AM – 7:00 AM</td>
+                <td class="px-4 sm:px-6 py-3">CrossFit</td>
+                <td class="px-4 sm:px-6 py-3">Aman Khan</td>
+              </tr>
+              <tr class="border-t border-white/10 hover:bg-white/5 transition">
+                <td class="px-4 sm:px-6 py-3">Thursday</td>
+                <td class="px-4 sm:px-6 py-3">7:30 AM – 8:30 AM</td>
+                <td class="px-4 sm:px-6 py-3">Dance Fitness</td>
+                <td class="px-4 sm:px-6 py-3">Priya Mehra</td>
+              </tr>
+              <tr class="border-t border-white/10 hover:bg-white/5 transition">
+                <td class="px-4 sm:px-6 py-3">Friday</td>
+                <td class="px-4 sm:px-6 py-3">6:00 AM – 7:00 AM</td>
+                <td class="px-4 sm:px-6 py-3">Martial Arts</td>
+                <td class="px-4 sm:px-6 py-3">Rohan Kapoor</td>
+              </tr>
+              <tr class="border-t border-white/10 hover:bg-white/5 transition">
+                <td class="px-4 sm:px-6 py-3">Saturday</td>
+                <td class="px-4 sm:px-6 py-3">8:00 AM – 9:00 AM</td>
+                <td class="px-4 sm:px-6 py-3">Cycling</td>
+                <td class="px-4 sm:px-6 py-3">Sanya Roy</td>
+              </tr>
+              <tr class="border-t border-white/10 hover:bg-white/5 transition">
+                <td class="px-4 sm:px-6 py-3">Sunday</td>
+                <td class="px-4 sm:px-6 py-3">Rest / Open Gym</td>
+                <td class="px-4 sm:px-6 py-3">Self-practice / Recovery</td>
+                <td class="px-4 sm:px-6 py-3">–</td>
+              </tr>
             </tbody>
           </table>
+        </div>
+
+        <!-- MOBILE: Only One Day + Button -->
+        <div
+          class="md:hidden bg-[#0b1220] rounded-2xl border border-white/10 p-4">
+          <table
+            class="w-full text-left border-collapse text-sm sm:text-base mb-4">
+            <thead class="bg-[#0f172a]">
+              <tr>
+                <th class="px-4 py-2 text-cyan-400 font-semibold">Day</th>
+                <th class="px-4 py-2 text-cyan-400 font-semibold">Time</th>
+                <th class="px-4 py-2 text-cyan-400 font-semibold">Program</th>
+                <th class="px-4 py-2 text-cyan-400 font-semibold">Trainer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-t border-white/10 hover:bg-white/5 transition">
+                <td class="px-4 py-2">Monday</td>
+                <td class="px-4 py-2">6:00 AM – 7:00 AM</td>
+                <td class="px-4 py-2">Strength Training</td>
+                <td class="px-4 py-2">Rahul Verma</td>
+              </tr>
+            </tbody>
+          </table>
+          <a
+            href="schedule.html"
+            class="block text-center bg-cyan-400 text-black py-2 rounded-full font-semibold hover:scale-105 transition">
+            View Full Schedule
+          </a>
         </div>
       </div>
     </section>
@@ -503,10 +568,10 @@
     </div>
 
     <!-- FOOTER -->
-<div id="footer-container"></div>
+    <div id="footer-container"></div>
 
-<!-- JS -->
-<script src="main.js"></script>
+    <!-- JS -->
+    <script src="main.js"></script>
 
     <!-- SCRIPTS -->
     <script>
