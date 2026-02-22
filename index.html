@@ -89,154 +89,121 @@
     <div id="navbar-container"></div>
 
     <!-- HERO -->
-    <section class="min-h-screen flex items-center pt-28">
-      <div
-        class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-        <div class="hero-text">
-          <h1 class="text-4xl md:text-6xl font-bold">
-            Train <span class="text-cyan-400">Harder</span><br />Become Stronger
-          </h1>
-          <p class="text-gray-400 mt-6 max-w-lg">
-            Premium fitness environment with expert trainers & modern equipment.
-          </p>
-          <div
-            class="mt-8 flex flex-col sm:flex-row gap-4 sm:gap-4 items-center">
-            <a
-              href="contact.html"
-              class="bg-cyan-400 text-black px-6 py-2 sm:px-8 sm:py-3 rounded-full font-semibold hover:scale-105 transition text-center w-full sm:w-auto">
-              Start Training
-            </a>
-
-            <a
-              href="programs.html"
-              class="border border-gray-500 px-6 py-2 sm:px-8 sm:py-3 rounded-full hover:border-cyan-400 hover:text-cyan-400 transition text-center w-full sm:w-auto">
-              View Programs
-            </a>
-          </div>
-        </div>
-
-        <div class="hero-img relative">
-          <img
-            src="https://images.unsplash.com/photo-1599058917212-d750089bc07e"
-            class="rounded-2xl shadow-[0_0_70px_rgba(34,211,238,.35)]" />
+    <section
+      class="min-h-screen flex flex-col md:flex-row items-center pt-28 px-4 md:px-6">
+      <div class="md:w-1/2 hero-text mb-8 md:mb-0">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
+          Train <span class="text-cyan-400">Harder</span><br />Become Stronger
+        </h1>
+        <p class="text-gray-400 mt-4 sm:mt-6 max-w-lg">
+          Premium fitness environment with expert trainers & modern equipment.
+        </p>
+        <div class="mt-6 flex flex-col sm:flex-row gap-4 items-center">
+          <a
+            href="contact.html"
+            class="bg-cyan-400 text-black px-6 py-3 sm:px-8 sm:py-3 rounded-full font-semibold hover:scale-105 transition w-full sm:w-auto text-center">
+            Start Training
+          </a>
+          <a
+            href="programs.html"
+            class="border border-gray-500 px-6 py-3 sm:px-8 sm:py-3 rounded-full hover:border-cyan-400 hover:text-cyan-400 transition w-full sm:w-auto text-center">
+            View Programs
+          </a>
         </div>
       </div>
+
+      <div class="md:w-1/2 hero-img relative">
+        <img
+          src="https://images.unsplash.com/photo-1599058917212-d750089bc07e"
+          class="rounded-2xl shadow-[0_0_70px_rgba(34,211,238,.35)] w-full max-w-lg mx-auto md:mx-0" />
+      </div>
     </section>
-    <!-- LIGHTBOX -->
-    <div
-      id="lightbox"
-      class="fixed inset-0 bg-black/90 hidden items-center justify-center z-[999]">
-      <span
-        id="closeLightbox"
-        class="absolute top-6 right-8 text-white text-4xl cursor-pointer"
-        >&times;</span
-      >
 
-      <img
-        id="lightboxImg"
-        class="max-w-[90%] max-h-[85%] rounded-xl shadow-2xl scale-90 opacity-0 transition-all duration-300" />
-    </div>
-
-    <!-- POPULAR PROGRAMS -->
-    <section class="py-16 md:py-20 max-w-7xl mx-auto px-6 reveal">
+    <!-- PROGRAMS GRID -->
+    <section class="max-w-7xl mx-auto px-6 pb-24">
       <h2
-        class="text-3xl md:text-4xl font-bold text-center text-cyan-400 mb-12">
+        class="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-cyan-400 mb-10 sm:mb-12">
         Popular Programs
       </h2>
-      <div class="grid md:grid-cols-3 gap-10">
-        <!-- CARD 1 -->
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <!-- CARD -->
         <div
-          class="bg-[#0b1220] p-8 rounded-2xl border border-white/10 hover:scale-105 hover:shadow-2xl transition transform duration-300 reveal">
-          <div class="text-cyan-400 text-5xl mb-4 text-center">🏋️</div>
-          <h3 class="text-xl font-semibold mb-3 text-center">
-            Strength Training
-          </h3>
-          <p class="text-gray-400 text-sm mb-4 text-center">
-            Build muscle & power with structured routines and expert guidance.
+          class="program-card reveal bg-[#0b1220] p-6 rounded-2xl border border-white/10 text-center">
+          <div class="text-cyan-400 text-5xl mb-4">🏋️</div>
+          <h3 class="text-xl font-semibold mb-2">Strength Training</h3>
+          <p class="text-gray-400 text-sm mb-4">
+            Build muscle & power with expert guidance.
           </p>
           <a
-            href="strength.html"
+            href="Programs/strength.html"
             class="block w-full bg-cyan-400 text-black py-2 rounded-full font-semibold text-center hover:scale-105 transition">
             Learn More
           </a>
         </div>
 
-        <!-- CARD 2 -->
         <div
-          class="bg-[#0b1220] p-8 rounded-2xl border border-white/10 hover:scale-105 hover:shadow-2xl transition transform duration-300 reveal">
-          <div class="text-cyan-400 text-5xl mb-4 text-center">🔥</div>
-          <h3 class="text-xl font-semibold mb-3 text-center">Fat Loss</h3>
-          <p class="text-gray-400 text-sm mb-4 text-center">
-            Burn calories efficiently with HIIT, cardio, and fat-burning
-            programs.
+          class="program-card reveal bg-[#0b1220] p-6 rounded-2xl border border-white/10 text-center">
+          <div class="text-cyan-400 text-5xl mb-4">🔥</div>
+          <h3 class="text-xl font-semibold mb-2">Fat Loss</h3>
+          <p class="text-gray-400 text-sm mb-4">
+            HIIT & cardio focused fat burning plans.
           </p>
           <a
-            href="fat-loss.html"
+            href="Programs/fat-loss.html"
             class="block w-full bg-cyan-400 text-black py-2 rounded-full font-semibold text-center hover:scale-105 transition">
             Learn More
           </a>
         </div>
 
-        <!-- CARD 3 -->
         <div
-          class="bg-[#0b1220] p-8 rounded-2xl border border-white/10 hover:scale-105 hover:shadow-2xl transition transform duration-300 reveal">
-          <div class="text-cyan-400 text-5xl mb-4 text-center">⚡</div>
-          <h3 class="text-xl font-semibold mb-3 text-center">CrossFit</h3>
-          <p class="text-gray-400 text-sm mb-4 text-center">
-            High intensity, functional workouts to improve stamina & overall
-            fitness.
+          class="program-card reveal bg-[#0b1220] p-6 rounded-2xl border border-white/10 text-center">
+          <div class="text-cyan-400 text-5xl mb-4">⚡</div>
+          <h3 class="text-xl font-semibold mb-2">CrossFit</h3>
+          <p class="text-gray-400 text-sm mb-4">
+            High intensity functional training.
           </p>
           <a
-            href="crossfit.html"
+            href="Programs/crossfit.html"
             class="block w-full bg-cyan-400 text-black py-2 rounded-full font-semibold text-center hover:scale-105 transition">
             Learn More
           </a>
         </div>
 
-        <!-- CARD 4 -->
         <div
-          class="bg-[#0b1220] p-8 rounded-2xl border border-white/10 hover:scale-105 hover:shadow-2xl transition transform duration-300 reveal">
-          <div class="text-cyan-400 text-5xl mb-4 text-center">🏃</div>
-          <h3 class="text-xl font-semibold mb-3 text-center">Cardio Blast</h3>
-          <p class="text-gray-400 text-sm mb-4 text-center">
-            Boost your endurance with high-energy cardio routines.
+          class="program-card reveal bg-[#0b1220] p-6 rounded-2xl border border-white/10 text-center">
+          <div class="text-cyan-400 text-5xl mb-4">🧘</div>
+          <h3 class="text-xl font-semibold mb-2">Yoga & Mobility</h3>
+          <p class="text-gray-400 text-sm mb-4">
+            Flexibility, balance & recovery.
           </p>
           <a
-            href="cardio.html"
+            href="Programs/yoga.html"
             class="block w-full bg-cyan-400 text-black py-2 rounded-full font-semibold text-center hover:scale-105 transition">
             Learn More
           </a>
         </div>
 
-        <!-- CARD 5 -->
         <div
-          class="bg-[#0b1220] p-8 rounded-2xl border border-white/10 hover:scale-105 hover:shadow-2xl transition transform duration-300 reveal">
-          <div class="text-cyan-400 text-5xl mb-4 text-center">🧘</div>
-          <h3 class="text-xl font-semibold mb-3 text-center">
-            Yoga & Mobility
-          </h3>
-          <p class="text-gray-400 text-sm mb-4 text-center">
-            Improve flexibility, core strength, and mental focus.
-          </p>
+          class="program-card reveal bg-[#0b1220] p-6 rounded-2xl border border-white/10 text-center">
+          <div class="text-cyan-400 text-5xl mb-4">🏃</div>
+          <h3 class="text-xl font-semibold mb-2">Cardio Blast</h3>
+          <p class="text-gray-400 text-sm mb-4">Endurance & stamina boost.</p>
           <a
-            href="yoga.html"
+            href="Programs/cardio.html"
             class="block w-full bg-cyan-400 text-black py-2 rounded-full font-semibold text-center hover:scale-105 transition">
             Learn More
           </a>
         </div>
 
-        <!-- CARD 6 -->
         <div
-          class="bg-[#0b1220] p-8 rounded-2xl border border-white/10 hover:scale-105 hover:shadow-2xl transition transform duration-300 reveal">
-          <div class="text-cyan-400 text-5xl mb-4 text-center">🥗</div>
-          <h3 class="text-xl font-semibold mb-3 text-center">
-            Nutrition Guidance
-          </h3>
-          <p class="text-gray-400 text-sm mb-4 text-center">
-            Personalized diet plans to complement your fitness goals.
+          class="program-card reveal bg-[#0b1220] p-6 rounded-2xl border border-white/10 text-center">
+          <div class="text-cyan-400 text-5xl mb-4">🥗</div>
+          <h3 class="text-xl font-semibold mb-2">Nutrition Guidance</h3>
+          <p class="text-gray-400 text-sm mb-4">
+            Diet plans tailored for results.
           </p>
           <a
-            href="nutrition.html"
+            href="Programs/nutrition.html"
             class="block w-full bg-cyan-400 text-black py-2 rounded-full font-semibold text-center hover:scale-105 transition">
             Learn More
           </a>
@@ -246,69 +213,83 @@
 
     <!-- WHY US -->
     <section class="py-16 md:py-20 bg-[#03060c] reveal">
-      <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-7xl mx-auto px-4 md:px-6">
         <h2
-          class="text-3xl md:text-4xl font-bold text-center text-cyan-400 mb-12">
+          class="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-cyan-400 mb-10 sm:mb-12">
           Why Choose EnergyM
         </h2>
-        <div class="grid md:grid-cols-3 gap-8">
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
           <!-- CARD 1 -->
           <div
-            class="hover-card reveal bg-[#0b1220] p-8 rounded-2xl border border-white/10 text-center transition transform hover:scale-105 hover:shadow-2xl duration-300">
-            <div class="text-cyan-400 text-4xl mb-4">🏅</div>
-            <h3 class="text-xl font-semibold mb-2">Certified Trainers</h3>
-            <p class="text-gray-400 text-sm">
+            class="hover-card reveal bg-[#0b1220] p-6 md:p-8 rounded-2xl border border-white/10 text-center transition transform hover:scale-105 hover:shadow-2xl duration-300">
+            <div class="text-cyan-400 text-3xl md:text-4xl mb-4">🏅</div>
+            <h3 class="text-lg sm:text-xl md:text-xl font-semibold mb-2">
+              Certified Trainers
+            </h3>
+            <p class="text-gray-400 text-sm md:text-base">
               Professional, certified coaches to guide you safely & effectively.
             </p>
           </div>
 
           <!-- CARD 2 -->
           <div
-            class="hover-card reveal bg-[#0b1220] p-8 rounded-2xl border border-white/10 text-center transition transform hover:scale-105 hover:shadow-2xl duration-300">
-            <div class="text-cyan-400 text-4xl mb-4">💪</div>
-            <h3 class="text-xl font-semibold mb-2">Modern Equipment</h3>
-            <p class="text-gray-400 text-sm">
+            class="hover-card reveal bg-[#0b1220] p-6 md:p-8 rounded-2xl border border-white/10 text-center transition transform hover:scale-105 hover:shadow-2xl duration-300">
+            <div class="text-cyan-400 text-3xl md:text-4xl mb-4">💪</div>
+            <h3 class="text-lg sm:text-xl md:text-xl font-semibold mb-2">
+              Modern Equipment
+            </h3>
+            <p class="text-gray-400 text-sm md:text-base">
               State-of-the-art machines & tools for every fitness goal.
             </p>
           </div>
 
           <!-- CARD 3 -->
           <div
-            class="hover-card reveal bg-[#0b1220] p-8 rounded-2xl border border-white/10 text-center transition transform hover:scale-105 hover:shadow-2xl duration-300">
-            <div class="text-cyan-400 text-4xl mb-4">📋</div>
-            <h3 class="text-xl font-semibold mb-2">Personalized Plans</h3>
-            <p class="text-gray-400 text-sm">
+            class="hover-card reveal bg-[#0b1220] p-6 md:p-8 rounded-2xl border border-white/10 text-center transition transform hover:scale-105 hover:shadow-2xl duration-300">
+            <div class="text-cyan-400 text-3xl md:text-4xl mb-4">📋</div>
+            <h3 class="text-lg sm:text-xl md:text-xl font-semibold mb-2">
+              Personalized Plans
+            </h3>
+            <p class="text-gray-400 text-sm md:text-base">
               Custom workout & diet plans tailored to your needs.
             </p>
           </div>
 
-          <!-- NEW CARD 4 -->
+          <!-- CARD 4 -->
           <div
-            class="hover-card reveal bg-[#0b1220] p-8 rounded-2xl border border-white/10 text-center transition transform hover:scale-105 hover:shadow-2xl duration-300">
-            <div class="text-cyan-400 text-4xl mb-4">⏱️</div>
-            <h3 class="text-xl font-semibold mb-2">Flexible Timings</h3>
-            <p class="text-gray-400 text-sm">
+            class="hover-card reveal bg-[#0b1220] p-6 md:p-8 rounded-2xl border border-white/10 text-center transition transform hover:scale-105 hover:shadow-2xl duration-300">
+            <div class="text-cyan-400 text-3xl md:text-4xl mb-4">⏱️</div>
+            <h3 class="text-lg sm:text-xl md:text-xl font-semibold mb-2">
+              Flexible Timings
+            </h3>
+            <p class="text-gray-400 text-sm md:text-base">
               Train anytime with our extended gym hours and flexible schedules.
             </p>
           </div>
 
-          <!-- NEW CARD 5 -->
+          <!-- CARD 5 -->
           <div
-            class="hover-card reveal bg-[#0b1220] p-8 rounded-2xl border border-white/10 text-center transition transform hover:scale-105 hover:shadow-2xl duration-300">
-            <div class="text-cyan-400 text-4xl mb-4">🏃</div>
-            <h3 class="text-xl font-semibold mb-2">Cardio Focus</h3>
-            <p class="text-gray-400 text-sm">
+            class="hover-card reveal bg-[#0b1220] p-6 md:p-8 rounded-2xl border border-white/10 text-center transition transform hover:scale-105 hover:shadow-2xl duration-300">
+            <div class="text-cyan-400 text-3xl md:text-4xl mb-4">🏃</div>
+            <h3 class="text-lg sm:text-xl md:text-xl font-semibold mb-2">
+              Cardio Focus
+            </h3>
+            <p class="text-gray-400 text-sm md:text-base">
               Improve endurance and burn calories with top-notch cardio
               programs.
             </p>
           </div>
 
-          <!-- NEW CARD 6 -->
+          <!-- CARD 6 -->
           <div
-            class="hover-card reveal bg-[#0b1220] p-8 rounded-2xl border border-white/10 text-center transition transform hover:scale-105 hover:shadow-2xl duration-300">
-            <div class="text-cyan-400 text-4xl mb-4">🥗</div>
-            <h3 class="text-xl font-semibold mb-2">Nutrition Support</h3>
-            <p class="text-gray-400 text-sm">
+            class="hover-card reveal bg-[#0b1220] p-6 md:p-8 rounded-2xl border border-white/10 text-center transition transform hover:scale-105 hover:shadow-2xl duration-300">
+            <div class="text-cyan-400 text-3xl md:text-4xl mb-4">🥗</div>
+            <h3 class="text-lg sm:text-xl md:text-xl font-semibold mb-2">
+              Nutrition Support
+            </h3>
+            <p class="text-gray-400 text-sm md:text-base">
               Get diet plans and nutrition guidance to complement your workouts.
             </p>
           </div>
@@ -316,100 +297,76 @@
       </div>
     </section>
 
-    <!-- SCHEDULE SECTION -->
-    <section class="py-20 bg-[#05080f]">
-      <div class="max-w-6xl mx-auto px-6">
-        <!-- Heading -->
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">
+    <!-- SCHEDULE -->
+    <section class="py-16 bg-[#05080f]">
+      <div class="max-w-6xl mx-auto px-4 md:px-6 overflow-x-auto">
+        <h2
+          class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-6 sm:mb-10">
           Class <span class="text-cyan-400">Schedule</span>
         </h2>
-
-        <!-- Table Wrapper -->
         <div
           class="overflow-x-auto bg-[#0b1220] rounded-2xl border border-white/10">
-          <table class="w-full text-left border-collapse">
-            <!-- Table Head -->
+          <table class="w-full text-left border-collapse text-sm sm:text-base">
             <thead class="bg-[#0f172a]">
               <tr>
-                <th class="px-6 py-4 text-cyan-400 font-semibold">Day</th>
-                <th class="px-6 py-4 text-cyan-400 font-semibold">Time</th>
-                <th class="px-6 py-4 text-cyan-400 font-semibold">Program</th>
-                <th class="px-6 py-4 text-cyan-400 font-semibold">Trainer</th>
+                <th class="px-4 sm:px-6 py-3 text-cyan-400 font-semibold">
+                  Day
+                </th>
+                <th class="px-4 sm:px-6 py-3 text-cyan-400 font-semibold">
+                  Time
+                </th>
+                <th class="px-4 sm:px-6 py-3 text-cyan-400 font-semibold">
+                  Program
+                </th>
+                <th class="px-4 sm:px-6 py-3 text-cyan-400 font-semibold">
+                  Trainer
+                </th>
               </tr>
             </thead>
-
-            <!-- Table Body -->
             <tbody>
+              <!-- Rows -->
               <tr class="border-t border-white/10 hover:bg-white/5 transition">
-                <td class="px-6 py-4">Monday</td>
-                <td class="px-6 py-4">6:00 AM – 7:00 AM</td>
-                <td class="px-6 py-4">Strength Training</td>
-                <td class="px-6 py-4">Rahul Verma</td>
+                <td class="px-4 sm:px-6 py-3">Monday</td>
+                <td class="px-4 sm:px-6 py-3">6:00 AM – 7:00 AM</td>
+                <td class="px-4 sm:px-6 py-3">Strength Training</td>
+                <td class="px-4 sm:px-6 py-3">Rahul Verma</td>
               </tr>
-
-              <tr class="border-t border-white/10 hover:bg-white/5 transition">
-                <td class="px-6 py-4">Tuesday</td>
-                <td class="px-6 py-4">7:00 AM – 8:00 AM</td>
-                <td class="px-6 py-4">Cardio Blast</td>
-                <td class="px-6 py-4">Neha Singh</td>
-              </tr>
-
-              <tr class="border-t border-white/10 hover:bg-white/5 transition">
-                <td class="px-6 py-4">Wednesday</td>
-                <td class="px-6 py-4">6:00 PM – 7:00 PM</td>
-                <td class="px-6 py-4">CrossFit</td>
-                <td class="px-6 py-4">Aman Khan</td>
-              </tr>
-
-              <tr class="border-t border-white/10 hover:bg-white/5 transition">
-                <td class="px-6 py-4">Thursday</td>
-                <td class="px-6 py-4">7:00 PM – 8:00 PM</td>
-                <td class="px-6 py-4">Yoga & Mobility</td>
-                <td class="px-6 py-4">Pooja Sharma</td>
-              </tr>
-
-              <tr class="border-t border-white/10 hover:bg-white/5 transition">
-                <td class="px-6 py-4">Friday</td>
-                <td class="px-6 py-4">6:00 AM – 7:00 AM</td>
-                <td class="px-6 py-4">Fat Loss HIIT</td>
-                <td class="px-6 py-4">Rahul Verma</td>
-              </tr>
-
-              <tr class="border-t border-white/10 hover:bg-white/5 transition">
-                <td class="px-6 py-4">Saturday</td>
-                <td class="px-6 py-4">8:00 AM – 9:00 AM</td>
-                <td class="px-6 py-4">Functional Training</td>
-                <td class="px-6 py-4">Neha Singh</td>
-              </tr>
+              <!-- Repeat other rows -->
             </tbody>
           </table>
         </div>
       </div>
     </section>
+
     <!-- BMI -->
-    <section class="py-20 max-w-4xl mx-auto px-6 reveal">
-      <h2 class="text-4xl font-bold text-center text-cyan-400 mb-6">
+    <section class="py-12 sm:py-16 max-w-3xl mx-auto px-4 sm:px-6 reveal">
+      <h2
+        class="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-cyan-400 mb-4 sm:mb-6">
         BMI Calculator
       </h2>
-      <div class="bg-[#0b1220] p-10 rounded-2xl border border-white/10">
-        <div class="grid md:grid-cols-2 gap-6 mb-8">
+      <div
+        class="bg-[#0b1220] p-4 sm:p-6 md:p-8 rounded-xl border border-white/10 shadow-md">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6">
           <input
             id="height"
             type="number"
             placeholder="Height (cm)"
-            class="p-4 rounded bg-black/40 border border-white/10 focus:border-cyan-400 outline-none" />
+            class="w-full p-3 rounded-lg bg-black/40 border border-white/10 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 outline-none text-white placeholder-gray-400 transition text-sm sm:text-base" />
           <input
             id="weight"
             type="number"
             placeholder="Weight (kg)"
-            class="p-4 rounded bg-black/40 border border-white/10 focus:border-cyan-400 outline-none" />
+            class="w-full p-3 rounded-lg bg-black/40 border border-white/10 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 outline-none text-white placeholder-gray-400 transition text-sm sm:text-base" />
         </div>
         <button
           onclick="calculateBMI()"
-          class="w-full bg-cyan-400 text-black py-4 rounded-full font-semibold hover:scale-[1.02] transition">
+          class="w-full bg-cyan-400 text-black py-2.5 sm:py-3 rounded-full font-semibold hover:scale-[1.02] transition transform duration-200 text-sm sm:text-base">
           Calculate BMI
         </button>
-        <div id="bmiResult" class="mt-8 text-center hidden"></div>
+        <div
+          id="bmiResult"
+          class="mt-4 sm:mt-6 text-center text-base sm:text-lg font-semibold hidden"></div>
       </div>
     </section>
 
@@ -485,19 +442,20 @@
     </section>
 
     <!-- CTA -->
-    <section class="py-20 bg-[#03060c] reveal">
-      <div class="max-w-3xl mx-auto px-6 text-center">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6 reveal">
+    <section class="py-16 sm:py-20 bg-[#03060c] reveal">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+        <h2
+          class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 reveal">
           Ready to <span class="text-cyan-400">Transform</span> Your Body?
         </h2>
-        <p class="text-gray-400 mb-10 reveal">
+        <p class="text-gray-400 mb-6 sm:mb-10 reveal text-sm sm:text-base">
           Join our expert-led programs and take the first step towards your
           fitness goals. Personalized plans, 24/7 support, and community
           motivation await!
         </p>
         <button
-          id="loginBtn"
-          class="relative bg-gradient-to-r from-cyan-400 to-blue-500 text-black px-10 md:px-16 py-4 md:py-5 rounded-full font-semibold text-lg md:text-xl hover:scale-110 hover:shadow-[0_0_50px_rgba(34,211,238,0.7)] transition-transform duration-300">
+          id="joinBtn"
+          class="relative bg-gradient-to-r from-cyan-400 to-blue-500 text-black px-8 sm:px-12 py-3 sm:py-3 rounded-full font-semibold text-base sm:text-lg hover:scale-105 hover:shadow-[0_0_30px_rgba(34,211,238,0.7)] transition-transform duration-200">
           Join Now
         </button>
       </div>
@@ -508,17 +466,18 @@
       id="loginModal"
       class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50 opacity-0 transition-opacity duration-300">
       <div
-        class="modal-content bg-[#0b1220] p-8 rounded-2xl w-full max-w-sm relative transform scale-90 transition-all duration-300">
+        class="modal-content bg-[#0b1220] p-6 sm:p-8 rounded-2xl w-full max-w-xs relative transform scale-90 transition-all duration-300 shadow-lg">
         <!-- CLOSE BUTTON -->
         <button
           id="closeLogin"
-          class="absolute top-3 right-4 text-gray-400 hover:text-red-400 text-2xl font-bold"
+          class="absolute top-3 right-3 text-gray-400 hover:text-red-400 text-xl sm:text-2xl font-bold"
           aria-label="Close Modal">
           ✕
         </button>
 
         <!-- MODAL HEADER -->
-        <h3 class="text-2xl font-bold text-cyan-400 mb-6 text-center">
+        <h3
+          class="text-xl sm:text-2xl font-bold text-cyan-400 mb-4 sm:mb-6 text-center">
           Member Login
         </h3>
 
@@ -526,126 +485,135 @@
         <input
           id="loginEmail"
           type="email"
-          class="w-full mb-4 p-3 bg-black/40 rounded placeholder-gray-400 text-white"
+          class="w-full mb-3 sm:mb-4 p-3 sm:p-3 bg-black/40 rounded placeholder-gray-400 text-white text-sm sm:text-base"
           placeholder="Email" />
-
         <input
           id="loginPassword"
           type="password"
-          class="w-full mb-6 p-3 bg-black/40 rounded placeholder-gray-400 text-white"
+          class="w-full mb-4 sm:mb-5 p-3 sm:p-3 bg-black/40 rounded placeholder-gray-400 text-white text-sm sm:text-base"
           placeholder="Password" />
 
         <!-- LOGIN BUTTON -->
         <button
           id="submitLogin"
-          class="w-full bg-cyan-400 text-black py-3 rounded-full hover:scale-105 transition-transform duration-200">
+          class="w-full bg-cyan-400 text-black py-2.5 sm:py-3 rounded-full hover:scale-105 transition-transform duration-200 text-sm sm:text-base">
           Login
         </button>
       </div>
     </div>
 
+    <!-- FOOTER -->
 <div id="footer-container"></div>
+
+<!-- JS -->
 <script src="main.js"></script>
 
+    <!-- SCRIPTS -->
     <script>
-  /* ===== REVEAL ANIMATION ===== */
-  const reveals = document.querySelectorAll(".reveal");
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add("show");
-      });
-    },
-    { threshold: 0.15 }
-  );
-  reveals.forEach((el) => revealObserver.observe(el));
+      /* ===== REVEAL ANIMATION ===== */
+      const reveals = document.querySelectorAll(".reveal");
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add("show");
+          });
+        },
+        { threshold: 0.15 },
+      );
+      reveals.forEach((el) => revealObserver.observe(el));
 
-  /* ===== LOGIN MODAL ===== */
-  const loginModal = document.getElementById("loginModal");
-  const loginBtn = document.getElementById("loginBtn");
-  const closeLogin = document.getElementById("closeLogin");
+      /* ===== LOGIN MODAL ===== */
+      const loginModal = document.getElementById("loginModal");
+      const joinBtn = document.getElementById("joinBtn"); // CTA button
+      const closeLogin = document.getElementById("closeLogin");
 
-  function openModal() {
-    loginModal?.classList.remove("hidden");
-    setTimeout(() => {
-      loginModal?.classList.remove("opacity-0");
-      loginModal?.querySelector(".modal-content")?.classList.remove("scale-90");
-    }, 50);
-  }
-
-  function closeModal() {
-    loginModal?.classList.add("opacity-0");
-    loginModal?.querySelector(".modal-content")?.classList.add("scale-90");
-    setTimeout(() => loginModal?.classList.add("hidden"), 300);
-  }
-
-  loginBtn?.addEventListener("click", openModal);
-  closeLogin?.addEventListener("click", closeModal);
-
-  loginModal?.addEventListener("click", (e) => {
-    if (e.target === loginModal) closeModal();
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && !loginModal.classList.contains("hidden")) {
-      closeModal();
-    }
-  });
-
-  /* ===== BMI CALCULATOR ===== */
-  function calculateBMI() {
-    const heightInput = document.getElementById("height");
-    const weightInput = document.getElementById("weight");
-    const resultEl = document.getElementById("bmiResult");
-
-    const h = parseFloat(heightInput?.value) / 100;
-    const w = parseFloat(weightInput?.value);
-
-    if (!h || !w || h <= 0 || w <= 0) {
-      resultEl.className = "mt-8 text-red-400";
-      resultEl.textContent = "Enter valid values";
-      resultEl.classList.remove("hidden");
-      return;
-    }
-
-    const bmi = (w / (h * h)).toFixed(1);
-    resultEl.className =
-      "mt-8 text-xl font-semibold text-cyan-400 animate-pulse";
-    resultEl.textContent = `Your BMI: ${bmi}`;
-    resultEl.classList.remove("hidden");
-  }
-
-  /* ===== COUNTER ANIMATION ===== */
-  const counters = document.querySelectorAll(".counter");
-
-  counters.forEach((counter) => {
-    const updateCount = () => {
-      const target = +counter.getAttribute("data-target");
-      const current = +counter.innerText.replace(/,/g, "");
-      const increment = Math.ceil(target / 200);
-
-      if (current < target) {
-        counter.innerText = Math.min(current + increment, target).toLocaleString();
-        requestAnimationFrame(updateCount);
-      } else {
-        counter.innerText = target.toLocaleString();
+      function openModal() {
+        if (!loginModal) return;
+        loginModal.classList.remove("hidden");
+        setTimeout(() => {
+          loginModal.classList.remove("opacity-0");
+          loginModal
+            .querySelector(".modal-content")
+            .classList.remove("scale-90");
+        }, 50);
       }
-    };
 
-    const counterObserver = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            updateCount();
-            observer.unobserve(counter);
+      function closeModal() {
+        if (!loginModal) return;
+        loginModal.classList.add("opacity-0");
+        loginModal.querySelector(".modal-content").classList.add("scale-90");
+        setTimeout(() => loginModal.classList.add("hidden"), 300);
+      }
+
+      joinBtn?.addEventListener("click", openModal);
+      closeLogin?.addEventListener("click", closeModal);
+
+      loginModal?.addEventListener("click", (e) => {
+        if (e.target === loginModal) closeModal();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && !loginModal.classList.contains("hidden")) {
+          closeModal();
+        }
+      });
+
+      /* ===== BMI CALCULATOR ===== */
+      function calculateBMI() {
+        const heightInput = document.getElementById("height");
+        const weightInput = document.getElementById("weight");
+        const resultEl = document.getElementById("bmiResult");
+
+        const h = parseFloat(heightInput?.value) / 100;
+        const w = parseFloat(weightInput?.value);
+
+        if (!h || !w || h <= 0 || w <= 0) {
+          resultEl.className = "mt-6 text-red-400 text-center";
+          resultEl.textContent = "Enter valid values";
+          resultEl.classList.remove("hidden");
+          return;
+        }
+
+        const bmi = (w / (h * h)).toFixed(1);
+        resultEl.className =
+          "mt-6 text-cyan-400 text-center font-semibold text-lg animate-pulse";
+        resultEl.textContent = `Your BMI: ${bmi}`;
+        resultEl.classList.remove("hidden");
+      }
+
+      /* ===== COUNTER ANIMATION ===== */
+      const counters = document.querySelectorAll(".counter");
+      counters.forEach((counter) => {
+        const updateCount = () => {
+          const target = +counter.getAttribute("data-target");
+          const current = +counter.innerText.replace(/,/g, "");
+          const increment = Math.ceil(target / 200);
+
+          if (current < target) {
+            counter.innerText = Math.min(
+              current + increment,
+              target,
+            ).toLocaleString();
+            requestAnimationFrame(updateCount);
+          } else {
+            counter.innerText = target.toLocaleString();
           }
-        });
-      },
-      { threshold: 0.5 }
-    );
+        };
 
-    counterObserver.observe(counter);
-  });
-</script>
+        const counterObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                updateCount();
+                observer.unobserve(counter);
+              }
+            });
+          },
+          { threshold: 0.5 },
+        );
+
+        counterObserver.observe(counter);
+      });
+    </script>
   </body>
 </html>

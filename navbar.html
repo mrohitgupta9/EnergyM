@@ -3,95 +3,79 @@
   <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
     <h1 class="text-3xl font-semibold text-cyan-400">
-      <a href="index.html">EnergyM</a>
+      <a href="/EnergyM/index.html">EnergyM</a>
     </h1>
 
-    <!-- DESKTOP MENU -->
     <nav class="hidden md:flex gap-8 text-sm">
-      <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
-      <a href="programs.html" class="hover:text-cyan-400 transition">Programs</a>
-      <a href="trainers.html" class="hover:text-cyan-400 transition">Trainers</a>
-      <a href="gallery.html" class="hover:text-cyan-400 transition">Gallery</a>
-      <a href="schedule.html" class="hover:text-cyan-400 transition">Schedule</a>
-      <a href="contact.html" class="hover:text-cyan-400 transition">Contact</a>
+      <a href="/EnergyM/index.html" class="hover:text-cyan-400 transition">Home</a>
+      <a href="/EnergyM/programs.html" class="hover:text-cyan-400 transition">Programs</a>
+      <a href="/EnergyM/trainers.html" class="hover:text-cyan-400 transition">Trainers</a>
+      <a href="/EnergyM/gallery.html" class="hover:text-cyan-400 transition">Gallery</a>
+      <a href="/EnergyM/schedule.html" class="hover:text-cyan-400 transition">Schedule</a>
+      <a href="/EnergyM/contact.html" class="hover:text-cyan-400 transition">Contact</a>
     </nav>
 
-    <!-- DESKTOP LOGIN -->
-    <a href="./Dashboard/login.html"
-    class="bg-cyan-400 text-black px-6 py-2 rounded-full font-semibold">
-    Login
+    <a href="/EnergyM/Dashboard/login.html"
+       class="bg-cyan-400 text-black px-6 py-2 rounded-full font-semibold">
+      Login
     </a>
 
-    <!-- MOBILE HAMBURGER -->
-    <button id="menuBtn" class="md:hidden text-3xl">
-      ☰
-    </button>
+    <button id="menuBtn" class="md:hidden text-3xl">☰</button>
   </div>
 
-  <!-- MOBILE MENU -->
   <div id="mobileMenu"
-    class="hidden md:hidden bg-[#03060c] border-t border-white/10 px-6 py-6 space-y-5 text-sm animate-slideDown">
-    <a href="index.html" class="block hover:text-cyan-400">Home</a>
-    <a href="programs.html" class="block hover:text-cyan-400">Programs</a>
-    <a href="trainers.html" class="block hover:text-cyan-400">Trainers</a>
-    <a href="gallery.html" class="block hover:text-cyan-400">Gallery</a>
-    <a href="schedule.html" class="block hover:text-cyan-400">schedule</a>
-    <a href="contact.html" class="block hover:text-cyan-400">Contact</a>
+       class="hidden md:hidden bg-[#03060c] border-t border-white/10 px-6 py-6 space-y-5 text-sm">
+    <a href="/EnergyM/index.html" class="block hover:text-cyan-400">Home</a>
+    <a href="/EnergyM/programs.html" class="block hover:text-cyan-400">Programs</a>
+    <a href="/EnergyM/trainers.html" class="block hover:text-cyan-400">Trainers</a>
+    <a href="/EnergyM/gallery.html" class="block hover:text-cyan-400">Gallery</a>
+    <a href="/EnergyM/schedule.html" class="block hover:text-cyan-400">Schedule</a>
+    <a href="/EnergyM/contact.html" class="block hover:text-cyan-400">Contact</a>
 
     <button id="loginBtnMobile"
-      class="w-full bg-cyan-400 text-black py-2 rounded-full font-semibold mt-4">
+            class="w-full bg-cyan-400 text-black py-2 rounded-full font-semibold mt-4">
       Login
     </button>
   </div>
 </header>
 
 <script>
-const menuBtn = document.getElementById("menuBtn");
-const mobileMenu = document.getElementById("mobileMenu");
-const loginModal = document.getElementById("loginModal");
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const loginModal = document.getElementById("loginModal");
 
-/* Mobile menu toggle */
-menuBtn?.addEventListener("click", (e) => {
-  e.stopPropagation();
-  mobileMenu.classList.toggle("hidden");
-});
+  // Mobile toggle
+  menuBtn.addEventListener("click", e => {
+    e.stopPropagation();
+    mobileMenu.classList.toggle("hidden");
+  });
 
-/* Close menu on outside click */
-document.addEventListener("click", (e) => {
-  if (!mobileMenu.contains(e.target) && e.target !== menuBtn) {
-    mobileMenu.classList.add("hidden");
-  }
+  // Close menu if click outside
+  document.addEventListener("click", e => {
+    if (!mobileMenu.contains(e.target) && e.target !== menuBtn) {
+      mobileMenu.classList.add("hidden");
+    }
+    if (e.target.id === "loginBtn" || e.target.id === "loginBtnMobile") {
+      loginModal?.classList.remove("hidden");
+      mobileMenu.classList.add("hidden");
+    }
+  });
 
-  if (e.target.id === "loginBtn" || e.target.id === "loginBtnMobile") {
-    loginModal?.classList.remove("hidden");
-    mobileMenu.classList.add("hidden");
-  }
+  // Highlight active links (works for subfolders)
+  const links = document.querySelectorAll("nav a, #mobileMenu a");
+  const currentPath = window.location.pathname; // full path
 
-  if (e.target.id === "closeLogin" || e.target.id === "loginModal") {
-    loginModal?.classList.add("hidden");
-  }
-});
+  links.forEach(link => {
+    const linkPath = new URL(link.href, window.location.origin).pathname;
+    if (linkPath === currentPath) {
+      link.classList.add("text-cyan-400", "font-semibold", "border-b-2", "border-cyan-400", "pb-1");
+    }
+  });
 
-/* ACTIVE LINK LOGIC */
-const links = document.querySelectorAll("nav a, #mobileMenu a");
-const currentPage = window.location.pathname.split("/").pop();
-
-links.forEach(link => {
-  if (link.getAttribute("href") === currentPage) {
-    link.classList.add(
-      "text-cyan-400",
-      "font-semibold",
-      "border-b-2",
-      "border-cyan-400",
-      "pb-1"
-    );
-  }
-});
-
-/* Close mobile menu on link click */
-mobileMenu?.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    mobileMenu.classList.add("hidden");
+  // Close mobile menu on link click
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => mobileMenu.classList.add("hidden"));
   });
 });
 </script>

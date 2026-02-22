@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Strength Training | EnergyM</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet" />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #05080f;
+        color: #fff;
+      }
+
+      /* reveal animation */
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: 0.9s ease;
+      }
+      .reveal.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <div id="navbar-container"></div>
+
+    <!-- HERO -->
+    <section class="pt-36 pb-20 text-center">
+      <h1 class="text-5xl md:text-6xl font-bold text-cyan-400">
+        Fat Loss Program
+      </h1>
+      <p class="text-gray-400 mt-6 max-w-2xl mx-auto">
+        Burn fat, boost metabolism, and reshape your body with science-backed
+        fat loss training.
+      </p>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section class="max-w-7xl mx-auto px-6 pb-24 reveal">
+      <div class="grid md:grid-cols-3 gap-8 text-center">
+        <div
+          class="bg-[#0b1220] p-8 rounded-2xl border border-white/10 hover:scale-105 transition">
+          <div class="text-cyan-400 text-4xl mb-4">🔥</div>
+          <h3 class="text-xl font-semibold mb-2">High Calorie Burn</h3>
+          <p class="text-gray-400 text-sm">
+            HIIT & metabolic workouts for maximum fat loss.
+          </p>
+        </div>
+
+        <div
+          class="bg-[#0b1220] p-8 rounded-2xl border border-white/10 hover:scale-105 transition">
+          <div class="text-cyan-400 text-4xl mb-4">⏱️</div>
+          <h3 class="text-xl font-semibold mb-2">Time Efficient</h3>
+          <p class="text-gray-400 text-sm">
+            Short, intense sessions with real results.
+          </p>
+        </div>
+
+        <div
+          class="bg-[#0b1220] p-8 rounded-2xl border border-white/10 hover:scale-105 transition">
+          <div class="text-cyan-400 text-4xl mb-4">🥗</div>
+          <h3 class="text-xl font-semibold mb-2">Nutrition Support</h3>
+          <p class="text-gray-400 text-sm">
+            Diet guidance to accelerate fat loss safely.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DETAILS -->
+    <section
+      class="max-w-6xl mx-auto px-6 pb-24 grid md:grid-cols-2 gap-12 reveal">
+      <div>
+        <h2 class="text-3xl font-semibold mb-6">What You’ll Get</h2>
+        <ul class="text-gray-400 space-y-4">
+          <li>✔ HIIT & cardio-based workouts</li>
+          <li>✔ Fat-burning strength circuits</li>
+          <li>✔ Weekly progress tracking</li>
+          <li>✔ Nutrition & calorie guidance</li>
+          <li>✔ Coach supervision</li>
+        </ul>
+      </div>
+
+      <div class="bg-[#0b1220] p-8 rounded-2xl border border-white/10">
+        <h3 class="text-2xl font-semibold mb-4">Program Overview</h3>
+
+        <p class="text-gray-400 mb-3">
+          Duration: <span class="text-white">6–10 Weeks</span>
+        </p>
+        <p class="text-gray-400 mb-3">
+          Frequency: <span class="text-white">5–6 Days / Week</span>
+        </p>
+        <p class="text-gray-400 mb-6">
+          Goal: <span class="text-white">Fat Loss & Conditioning</span>
+        </p>
+
+        <a
+          href="contact.html"
+          class="inline-block bg-cyan-400 text-black px-10 py-3 rounded-full font-semibold hover:scale-110 transition">
+          Join This Program
+        </a>
+      </div>
+    </section>
+
+    <!-- WHO IS THIS FOR -->
+    <section class="bg-[#03060c] py-20 reveal">
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold text-cyan-400 mb-8">
+          Who Is This Program For?
+        </h2>
+        <p class="text-gray-400 max-w-3xl mx-auto">
+          Perfect for anyone looking to lose weight, reduce body fat, improve
+          endurance, and feel fitter & healthier.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 text-center reveal">
+      <h2 class="text-4xl font-bold mb-6">
+        Ready to <span class="text-cyan-400">burn fat</span>?
+      </h2>
+      <p class="text-gray-400 mb-8">
+        Let our trainers guide your fat loss journey.
+      </p>
+      <a
+        href="contact.html"
+        class="inline-block bg-cyan-400 text-black px-12 py-4 rounded-full font-semibold hover:scale-110 transition">
+        Get Started
+      </a>
+    </section>
+
+    <!-- FOOTER -->
+    <div id="footer-container"></div>
+
+    <!-- JS -->
+    <script>
+      // Load navbar & footer from root
+      fetch("../navbar.html")
+        .then((res) => res.text())
+        .then(
+          (data) =>
+            (document.getElementById("navbar-container").innerHTML = data),
+        );
+
+      fetch("../footer.html")
+        .then((res) => res.text())
+        .then(
+          (data) =>
+            (document.getElementById("footer-container").innerHTML = data),
+        );
+
+      // Scroll reveal animation
+      const reveals = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add("show");
+          });
+        },
+        { threshold: 0.15 },
+      );
+      reveals.forEach((el) => observer.observe(el));
+
+      // Optional: smooth hover scale effect
+      const cards = document.querySelectorAll(".card-hover");
+      cards.forEach((card) => {
+        card.addEventListener("mouseover", () =>
+          card.classList.add("scale-105"),
+        );
+        card.addEventListener("mouseout", () =>
+          card.classList.remove("scale-105"),
+        );
+      });
+    </script>
+
+    <script src="../main.js"></script>
+  </body>
+</html>

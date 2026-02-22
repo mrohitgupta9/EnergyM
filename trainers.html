@@ -148,15 +148,24 @@ body {
 <script src="main.js"></script>
 
 <!-- JS -->
-<script>
-/* Load Navbar & Footer dynamically */
-fetch('navbar.html')
-  .then(res => res.text())
-  .then(data => document.getElementById('navbar-container').innerHTML = data);
+<script src="main.js"></script>
 
-fetch('footer.html')
-  .then(res => res.text())
-  .then(data => document.getElementById('footer-container').innerHTML = data);
+<!-- JS -->
+<script>
+
+/* Load Navbar */
+fetch('../navbar.html')   // instead of './navbar.html'
+  .then(r => r.text())
+  .then(d => {
+    document.getElementById('navbar-container').innerHTML = d;
+  });
+
+/* Load Footer */
+fetch('../footer.html')   // instead of './footer.html'
+  .then(r => r.text())
+  .then(d => {
+    document.getElementById('footer-container').innerHTML = d;
+  });
 
 /* Scroll reveal */
 const reveals=document.querySelectorAll(".reveal");

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Winter Sports Prep | EnergyM</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body { font-family:'Poppins', sans-serif; background:#05080f; color:#fff; }
+.card-hover:hover { transform: scale(1.05); transition: transform 0.3s ease; }
+.reveal { opacity:0; transform:translateY(40px); transition:0.9s ease; }
+.reveal.show { opacity:1; transform:translateY(0); }
+</style>
+</head>
+<body>
+
+<div id="navbar-container"></div>
+
+<section class="pt-36 pb-20 text-center reveal">
+  <h1 class="text-5xl md:text-6xl font-bold text-cyan-400">Winter Sports Prep</h1>
+  <p class="text-gray-400 mt-6 max-w-2xl mx-auto">
+    Conditioning and strength training for skiing, snowboarding, and other winter sports.
+  </p>
+</section>
+
+<section class="max-w-7xl mx-auto px-6 pb-24 reveal">
+  <div class="grid md:grid-cols-3 gap-8 text-center">
+    <div class="bg-[#0b1220] p-8 rounded-2xl border border-white/10 card-hover">
+      <div class="text-cyan-400 text-4xl mb-4">⛷️</div>
+      <h3 class="text-xl font-semibold mb-2">Ski & Snowboard Conditioning</h3>
+      <p class="text-gray-400 text-sm">Strengthen legs, core, and balance for winter sports.</p>
+    </div>
+    <div class="bg-[#0b1220] p-8 rounded-2xl border border-white/10 card-hover">
+      <div class="text-cyan-400 text-4xl mb-4">🏂</div>
+      <h3 class="text-xl font-semibold mb-2">Endurance</h3>
+      <p class="text-gray-400 text-sm">Boost stamina for long slopes and extended activity.</p>
+    </div>
+    <div class="bg-[#0b1220] p-8 rounded-2xl border border-white/10 card-hover">
+      <div class="text-cyan-400 text-4xl mb-4">🔥</div>
+      <h3 class="text-xl font-semibold mb-2">Agility & Balance</h3>
+      <p class="text-gray-400 text-sm">Improve coordination and stability on slippery terrain.</p>
+    </div>
+  </div>
+</section>
+
+<section class="max-w-6xl mx-auto px-6 pb-24 grid md:grid-cols-2 gap-12 reveal">
+  <div>
+    <h2 class="text-3xl font-semibold mb-6">What You’ll Get</h2>
+    <ul class="text-gray-400 space-y-4">
+      <li>✔ Leg, core & balance strength routines</li>
+      <li>✔ Endurance circuits for slope activity</li>
+      <li>✔ Agility & coordination drills</li>
+      <li>✔ Sports-specific conditioning</li>
+      <li>✔ Expert trainer guidance</li>
+    </ul>
+  </div>
+  <div class="bg-[#0b1220] p-8 rounded-2xl border border-white/10">
+    <h3 class="text-2xl font-semibold mb-4">Program Overview</h3>
+    <p class="text-gray-400 mb-3">Duration: <span class="text-white">6–10 Weeks</span></p>
+    <p class="text-gray-400 mb-3">Frequency: <span class="text-white">3–5 Days / Week</span></p>
+    <p class="text-gray-400 mb-6">Level: <span class="text-white">Beginner to Intermediate</span></p>
+    <a href="../contact.html" class="inline-block bg-cyan-400 text-black px-10 py-3 rounded-full font-semibold hover:scale-110 transition">Join This Program</a>
+  </div>
+</section>
+
+<section class="bg-[#03060c] py-20 reveal">
+  <div class="max-w-5xl mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold text-cyan-400 mb-8">Who Is This Program For?</h2>
+    <p class="text-gray-400 max-w-3xl mx-auto">
+      Anyone looking to prepare physically for winter sports like skiing and snowboarding.
+    </p>
+  </div>
+</section>
+
+<section class="py-24 text-center reveal">
+  <h2 class="text-4xl font-bold mb-6">
+    Ready to <span class="text-cyan-400">conquer the slopes</span>?
+  </h2>
+  <p class="text-gray-400 mb-8">Join our Winter Sports Prep program to stay fit and agile this season.</p>
+  <a href="../contact.html" class="inline-block bg-cyan-400 text-black px-12 py-4 rounded-full font-semibold hover:scale-110 transition">Get Started</a>
+</section>
+
+<div id="footer-container"></div>
+
+
+<script>
+fetch('../navbar.html').then(r=>r.text()).then(d=>document.getElementById('navbar-container').innerHTML=d);
+fetch('../footer.html').then(r=>r.text()).then(d=>document.getElementById('footer-container').innerHTML=d);
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting) e.target.classList.add('show');});},{threshold:0.15});
+reveals.forEach(r=>observer.observe(r));
+</script>
+
+</body>
+</html>
