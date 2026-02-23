@@ -27,7 +27,9 @@ This project showcases professional fitness programs, trainers, and interactive 
 ---
 
 ## 🧩 Live Demo
+
 🔗 Live: https://mrohitgupta9.github.io/EnergyM/
+
 📁 Repo: https://mrohitgupta9.github.io/my_portfolio/  
 
 ---
@@ -41,7 +43,9 @@ This project showcases professional fitness programs, trainers, and interactive 
 - **Animations & Interactivity:** Scroll reveal, hover effects, active link highlights
 
 ## 📫 Connect with Me
-- GitHub: https://github.com/mrohitgupta9  
+
+- GitHub: https://github.com/mrohitgupta9
+- 
 - LinkedIn: https://www.linkedin.com/in/mrohitgupta9  
 
 ---
