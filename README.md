@@ -11,11 +11,17 @@ This project showcases professional fitness programs, trainers, and interactive 
 ---
 
 ## 🚀 Features
-- Modern, responsive design with Tailwind CSS  
-- Interactive program pages (Cardio, CrossFit, Boxing, Yoga, etc.)  
-- Trainers section with hover effects and social links  
-- Mobile-friendly navigation with hamburger menu  
+
+- Modern, responsive design with Tailwind CSS
+- 
+- Interactive program pages (Cardio, CrossFit, Boxing, Yoga, etc.)
+- 
+- Trainers section with hover effects and social links
+- 
+- Mobile-friendly navigation with hamburger menu
+- 
 - Smooth scroll animations & reveal effects
+- 
 - Dashboard/Login: Secure user area to track progress, manage profiles, view personalized programs, interact with trainers, and monitor fitness goals.
 
 ---
@@ -27,12 +33,12 @@ This project showcases professional fitness programs, trainers, and interactive 
 ---
 
 ## 🛠️ Tech Stack
-- **Frontend:** HTML5, CSS3, Tailwind CSS, JavaScript  
-- **Responsive Design:** Works across desktops, tablets, and mobile devices  
+
+- **Frontend:** HTML5, CSS3, Tailwind CSS, JavaScript
+- 
+- **Responsive Design:** Works across desktops, tablets, and mobile devices
+- 
 - **Animations & Interactivity:** Scroll reveal, hover effects, active link highlights
-
-
----
 
 ## 📫 Connect with Me
 - GitHub: https://github.com/mrohitgupta9  
@@ -41,7 +47,3 @@ This project showcases professional fitness programs, trainers, and interactive 
 ---
 
 ⭐ If you like this project, consider giving it a star!
-
----
-
-## 📁 Project Structure
