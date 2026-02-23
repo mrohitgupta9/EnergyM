@@ -30,7 +30,7 @@ This project showcases professional fitness programs, trainers, and interactive 
 
 🔗 Live: https://mrohitgupta9.github.io/EnergyM/
 
-📁 Repo: https://mrohitgupta9.github.io/my_portfolio/  
+📁 Repo: https://github.com/mrohitgupta9  
 
 ---
 
